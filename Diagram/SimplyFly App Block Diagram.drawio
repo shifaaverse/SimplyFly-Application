@@ -1,0 +1,1154 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="AMKUVdMedclDo_r7ysok">
+    <mxGraphModel dx="1653" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart TB\n\n%% ============================================================\n%% APPLICATION\n%% ============================================================\n\nAPP[\&quot;✈️ SIMPLYFLY — AIR TICKET BOOKING SYSTEM\&quot;]\n\n\n%% ============================================================\n%% THREE ACTOR COLUMNS\n%% ============================================================\n\nsubgraph ACTORS[\&quot; \&quot;]\ndirection LR\n\n\n%% ============================================================\n%% LEFT COLUMN — PASSENGER\n%% ============================================================\n\nsubgraph PASSENGER[\&quot;USER / PASSENGER\&quot;]\ndirection TB\n\nP1[\&quot;REGISTER&lt;br/&gt;Enter name, email, phone and password&lt;br/&gt;Validate details → Create account\&quot;]\n\nP2[\&quot;LOGIN&lt;br/&gt;Enter credentials&lt;br/&gt;Authenticate → Passenger Dashboard\&quot;]\n\nP3[\&quot;SEARCH FLIGHTS&lt;br/&gt;Select one-way / round-trip&lt;br/&gt;Enter origin → destination&lt;br/&gt;Journey date&lt;br/&gt;Return date if applicable\&quot;]\n\nP4[\&quot;SEND FLIGHT SEARCH REQUEST&lt;br/&gt;Request available flights from Airline\&quot;]\n\nP5[\&quot;RECEIVE AVAILABLE FLIGHTS&lt;br/&gt;Receive flight information from Airline\&quot;]\n\nP6[\&quot;VIEW FLIGHT RESULTS&lt;br/&gt;Airline → Flight Number&lt;br/&gt;Departure → Arrival&lt;br/&gt;Duration → Stops → Fare → Class → Baggage&lt;br/&gt;Rating → Seat Availability → Refundability\&quot;]\n\nP7[\&quot;FILTER FLIGHTS&lt;br/&gt;Price → Stops → Airline&lt;br/&gt;Departure → Arrival&lt;br/&gt;Duration → Class → Baggage&lt;br/&gt;Rating → Seat Availability → Refundability\&quot;]\n\nP8[\&quot;SORT FLIGHTS&lt;br/&gt;Recommended&lt;br/&gt;Price → Duration → Departure → Arrival&lt;br/&gt;Rating → Stops\&quot;]\n\nP9[\&quot;SELECT OUTBOUND FLIGHT&lt;br/&gt;Select preferred airline and flight&lt;br/&gt;Review schedule → Confirm outbound\&quot;]\n\nP10[\&quot;ROUND TRIP?&lt;br/&gt;YES → Search return flight → Filter → Sort → Select return&lt;br/&gt;NO → Continue\&quot;]\n\nP11[\&quot;ADD TRAVELLERS&lt;br/&gt;Name → DOB → Gender&lt;br/&gt;Government ID Type → Government ID Number\&quot;]\n\nP12[\&quot;AGE CALCULATION&lt;br/&gt;Calculate age from DOB&lt;br/&gt;Adult / Child / Infant&lt;br/&gt;Apply applicable fare\&quot;]\n\nP13[\&quot;SELECT CLASS&lt;br/&gt;View available classes&lt;br/&gt;Select cabin / class\&quot;]\n\nP14[\&quot;SELECT SEATS&lt;br/&gt;View seat map&lt;br/&gt;Select seat for each traveller&lt;br/&gt;Window / Middle / Aisle&lt;br/&gt;Apply seat fare\&quot;]\n\nP15[\&quot;FOOD&lt;br/&gt;View food options&lt;br/&gt;Select food&lt;br/&gt;Calculate price OR skip\&quot;]\n\nP16[\&quot;EXTRA BAGGAGE&lt;br/&gt;View included baggage&lt;br/&gt;Select extra baggage&lt;br/&gt;Calculate price OR continue\&quot;]\n\nP17[\&quot;FARE CALCULATION&lt;br/&gt;Outbound + Return Fare&lt;br/&gt;Passenger Category + Class + Seat&lt;br/&gt;Food + Baggage + Taxes&lt;br/&gt;Calculate Final Total\&quot;]\n\nP18[\&quot;REVIEW BOOKING&lt;br/&gt;Journey → Flights → Travellers&lt;br/&gt;Government IDs → Class → Seats&lt;br/&gt;Food → Baggage → Fare → Total\&quot;]\n\nP19[\&quot;SEND BOOKING REQUEST&lt;br/&gt;Send selected flight, passenger, seat,&lt;br/&gt;food, baggage and fare details to Airline\&quot;]\n\nP20[\&quot;PAYMENT&lt;br/&gt;Select payment method&lt;br/&gt;Card / UPI / Net Banking / Wallet&lt;br/&gt;Complete payment\&quot;]\n\nP21[\&quot;PAYMENT VERIFICATION&lt;br/&gt;Verify payment response&lt;br/&gt;Failed → Retry&lt;br/&gt;Successful → Continue\&quot;]\n\nP22[\&quot;RECEIVE BOOKING CONFIRMATION&lt;br/&gt;Receive PNR / Booking ID from Airline\&quot;]\n\nP23[\&quot;TICKET&lt;br/&gt;Generate e-ticket&lt;br/&gt;Create PDF&lt;br/&gt;Download ticket\&quot;]\n\nP24[\&quot;NOTIFICATIONS&lt;br/&gt;Booking confirmation&lt;br/&gt;Payment confirmation&lt;br/&gt;Ticket&lt;br/&gt;Flight updates&lt;br/&gt;Delay / Cancellation / Refund\&quot;]\n\nP25[\&quot;MY TRIPS&lt;br/&gt;Upcoming → Completed → Cancelled&lt;br/&gt;Flight status → Booking details → Ticket\&quot;]\n\nP26[\&quot;MANAGE BOOKING&lt;br/&gt;Search PNR / Booking ID&lt;br/&gt;View booking / ticket / flight status&lt;br/&gt;Add food / baggage\&quot;]\n\nP27[\&quot;RESCHEDULING REQUEST&lt;br/&gt;Select booking&lt;br/&gt;Select new date&lt;br/&gt;Request new flight\&quot;]\n\nP28[\&quot;RECEIVE RESCHEDULING OPTIONS&lt;br/&gt;Receive available flights, seats and fares\&quot;]\n\nP29[\&quot;CANCELLATION / REFUND REQUEST&lt;br/&gt;Select booking&lt;br/&gt;Check eligibility&lt;br/&gt;Submit cancellation / refund request\&quot;]\n\nP30[\&quot;RECEIVE REFUND RESULT&lt;br/&gt;Receive approved / rejected status&lt;br/&gt;Receive refund amount / status\&quot;]\n\nP31[\&quot;END PASSENGER WORKFLOW\&quot;]\n\n\nP1 --&gt; P2\nP2 --&gt; P3\nP3 --&gt; P4\nP4 --&gt; P5\nP5 --&gt; P6\nP6 --&gt; P7\nP7 --&gt; P8\nP8 --&gt; P9\nP9 --&gt; P10\nP10 --&gt; P11\nP11 --&gt; P12\nP12 --&gt; P13\nP13 --&gt; P14\nP14 --&gt; P15\nP15 --&gt; P16\nP16 --&gt; P17\nP17 --&gt; P18\nP18 --&gt; P19\nP19 --&gt; P20\nP20 --&gt; P21\nP21 --&gt; P22\nP22 --&gt; P23\nP23 --&gt; P24\nP24 --&gt; P25\nP25 --&gt; P26\nP26 --&gt; P27\nP27 --&gt; P28\nP28 --&gt; P29\nP29 --&gt; P30\nP30 --&gt; P31\n\nend\n\n\n%% ============================================================\n%% CENTER COLUMN — AIRLINE\n%% ============================================================\n\nsubgraph AIRLINE[\&quot;AIRLINE\&quot;]\ndirection TB\n\nA1[\&quot;AIRLINE ONBOARDING&lt;br/&gt;Admin enters airline details&lt;br/&gt;Verify information&lt;br/&gt;Approve airline&lt;br/&gt;Activate airline account\&quot;]\n\nA2[\&quot;LOGIN&lt;br/&gt;Enter airline credentials&lt;br/&gt;Authenticate → Airline Dashboard\&quot;]\n\nA3[\&quot;MANAGE ROUTES&lt;br/&gt;Add route&lt;br/&gt;Origin → Destination&lt;br/&gt;View → Edit → Remove\&quot;]\n\nA4[\&quot;CREATE FLIGHT&lt;br/&gt;Select route&lt;br/&gt;Flight number / name&lt;br/&gt;Journey date&lt;br/&gt;Departure / Arrival&lt;br/&gt;Aircraft details\&quot;]\n\nA5[\&quot;MANAGE SCHEDULE&lt;br/&gt;Journey dates&lt;br/&gt;Departure / Arrival times&lt;br/&gt;Frequency&lt;br/&gt;Update schedule\&quot;]\n\nA6[\&quot;CONFIGURE CLASS&lt;br/&gt;Available class&lt;br/&gt;Class fare&lt;br/&gt;Seat capacity&lt;br/&gt;Included baggage&lt;br/&gt;Available services\&quot;]\n\nA7[\&quot;CONFIGURE SEATS&lt;br/&gt;Seat map&lt;br/&gt;Seat numbers&lt;br/&gt;Window / Middle / Aisle&lt;br/&gt;Assign class&lt;br/&gt;Seat availability&lt;br/&gt;Seat-specific fare\&quot;]\n\nA8[\&quot;MANAGE FARES&lt;br/&gt;Base fare&lt;br/&gt;Class fare&lt;br/&gt;Seat-specific fare&lt;br/&gt;Update pricing\&quot;]\n\nA9[\&quot;MANAGE BAGGAGE&lt;br/&gt;Included baggage&lt;br/&gt;Extra baggage options&lt;br/&gt;Weight → Price\&quot;]\n\nA10[\&quot;MANAGE FOOD&lt;br/&gt;Food options&lt;br/&gt;Description → Price&lt;br/&gt;Availability\&quot;]\n\nA11[\&quot;PUBLISH FLIGHT&lt;br/&gt;Validate route&lt;br/&gt;Validate schedule&lt;br/&gt;Validate class&lt;br/&gt;Validate seats&lt;br/&gt;Validate fares&lt;br/&gt;Validate baggage&lt;br/&gt;Validate food&lt;br/&gt;Publish for passenger search\&quot;]\n\nA12[\&quot;RECEIVE FLIGHT SEARCH REQUEST&lt;br/&gt;Receive search criteria from Passenger\&quot;]\n\nA13[\&quot;SEND AVAILABLE FLIGHTS&lt;br/&gt;Return matching flights&lt;br/&gt;Schedules → Fares → Seats → Availability\&quot;]\n\nA14[\&quot;RECEIVE BOOKING REQUEST&lt;br/&gt;Receive passenger, flight, seat,&lt;br/&gt;food, baggage and payment information\&quot;]\n\nA15[\&quot;MANAGE BOOKING&lt;br/&gt;Validate PNR&lt;br/&gt;Passenger / Traveller details&lt;br/&gt;Government ID&lt;br/&gt;Seats → Class → Food → Baggage&lt;br/&gt;Payment → Booking status\&quot;]\n\nA16[\&quot;CONFIRM BOOKING&lt;br/&gt;Reserve seats&lt;br/&gt;Generate PNR / Booking ID&lt;br/&gt;Update booking status\&quot;]\n\nA17[\&quot;SEND BOOKING CONFIRMATION&lt;br/&gt;Send PNR / ticket information to Passenger\&quot;]\n\nA18[\&quot;MANAGE SEAT AVAILABILITY&lt;br/&gt;Total seats&lt;br/&gt;Booked seats&lt;br/&gt;Available seats&lt;br/&gt;Update after booking / cancellation / rescheduling\&quot;]\n\nA19[\&quot;UPDATE FLIGHT STATUS&lt;br/&gt;Scheduled&lt;br/&gt;On-time&lt;br/&gt;Delayed&lt;br/&gt;Cancelled\&quot;]\n\nA20[\&quot;SEND FLIGHT NOTIFICATION&lt;br/&gt;Schedule changes&lt;br/&gt;Delay&lt;br/&gt;Cancellation&lt;br/&gt;Other flight updates\&quot;]\n\nA21[\&quot;RECEIVE RESCHEDULING REQUEST&lt;br/&gt;Receive request from Passenger\&quot;]\n\nA22[\&quot;CHECK RESCHEDULING&lt;br/&gt;Available dates&lt;br/&gt;Available flights&lt;br/&gt;Available seats&lt;br/&gt;Applicable fares\&quot;]\n\nA23[\&quot;SEND RESCHEDULING OPTIONS&lt;br/&gt;Return flights → seats → fares\&quot;]\n\nA24[\&quot;RECEIVE CANCELLATION / REFUND REQUEST&lt;br/&gt;Receive request forwarded by Admin\&quot;]\n\nA25[\&quot;PROCESS CANCELLATION / REFUND&lt;br/&gt;Review booking&lt;br/&gt;Check cancellation rules&lt;br/&gt;Check refund eligibility\&quot;]\n\nA26[\&quot;DECISION&lt;br/&gt;APPROVED or REJECTED\&quot;]\n\nA27[\&quot;IF APPROVED&lt;br/&gt;Approve cancellation&lt;br/&gt;Calculate refund&lt;br/&gt;Process refund&lt;br/&gt;Update refund status\&quot;]\n\nA28[\&quot;IF REJECTED&lt;br/&gt;Record rejection reason&lt;br/&gt;Update request status\&quot;]\n\nA29[\&quot;SEND DECISION TO ADMIN&lt;br/&gt;Send approval / rejection&lt;br/&gt;Send refund information\&quot;]\n\nA30[\&quot;SUPPORT WEB CHECK-IN&lt;br/&gt;Validate booking&lt;br/&gt;Validate passenger&lt;br/&gt;Verify eligibility&lt;br/&gt;Check check-in window&lt;br/&gt;Provide boarding-pass information\&quot;]\n\nA31[\&quot;END AIRLINE WORKFLOW\&quot;]\n\n\nA1 --&gt; A2\nA2 --&gt; A3\nA3 --&gt; A4\nA4 --&gt; A5\nA5 --&gt; A6\nA6 --&gt; A7\nA7 --&gt; A8\nA8 --&gt; A9\nA9 --&gt; A10\nA10 --&gt; A11\nA11 --&gt; A12\nA12 --&gt; A13\nA13 --&gt; A14\nA14 --&gt; A15\nA15 --&gt; A16\nA16 --&gt; A17\nA17 --&gt; A18\nA18 --&gt; A19\nA19 --&gt; A20\nA20 --&gt; A21\nA21 --&gt; A22\nA22 --&gt; A23\nA23 --&gt; A24\nA24 --&gt; A25\nA25 --&gt; A26\nA26 --&gt; A27\nA27 --&gt; A28\nA28 --&gt; A29\nA29 --&gt; A30\nA30 --&gt; A31\n\nend\n\n\n%% ============================================================\n%% RIGHT COLUMN — ADMIN\n%% ============================================================\n\nsubgraph ADMIN[\&quot;ADMIN\&quot;]\ndirection TB\n\nD1[\&quot;LOGIN&lt;br/&gt;Enter admin credentials&lt;br/&gt;Authenticate → Admin Dashboard\&quot;]\n\nD2[\&quot;ADMIN DASHBOARD&lt;br/&gt;Airlines → Passengers → Flights&lt;br/&gt;Bookings → Revenue&lt;br/&gt;Cancellation / Refund Requests → Reports\&quot;]\n\nD3[\&quot;AIRLINE ONBOARDING&lt;br/&gt;Receive airline details&lt;br/&gt;Verify registration / documents&lt;br/&gt;Approve / Reject airline&lt;br/&gt;Activate airline account\&quot;]\n\nD4[\&quot;MANAGE AIRLINES&lt;br/&gt;View airlines&lt;br/&gt;View airline details&lt;br/&gt;Update information&lt;br/&gt;Activate / Deactivate airline\&quot;]\n\nD5[\&quot;MANAGE PASSENGERS&lt;br/&gt;View passenger accounts&lt;br/&gt;View passenger details&lt;br/&gt;View booking history\&quot;]\n\nD6[\&quot;MONITOR ROUTES&lt;br/&gt;View airline routes&lt;br/&gt;Origin → Destination&lt;br/&gt;Monitor route information\&quot;]\n\nD7[\&quot;MONITOR FLIGHTS&lt;br/&gt;Airline → Flight Number&lt;br/&gt;Route → Schedule → Status&lt;br/&gt;Seat Capacity → Available Seats → Bookings\&quot;]\n\nD8[\&quot;MANAGE BOOKINGS&lt;br/&gt;Booking ID / PNR&lt;br/&gt;Passenger → Airline → Flight → Date&lt;br/&gt;Payment Status → Booking Status\&quot;]\n\nD9[\&quot;RECEIVE CANCELLATION / REFUND REQUEST&lt;br/&gt;Receive request from Passenger&lt;br/&gt;Identify booking&lt;br/&gt;Verify passenger and payment details\&quot;]\n\nD10[\&quot;VALIDATE REQUEST&lt;br/&gt;Check booking&lt;br/&gt;Check payment&lt;br/&gt;Check cancellation conditions&lt;br/&gt;Check refund eligibility\&quot;]\n\nD11[\&quot;FORWARD REQUEST TO AIRLINE&lt;br/&gt;Send cancellation / refund request&lt;br/&gt;Include booking information&lt;br/&gt;Track request\&quot;]\n\nD12[\&quot;RECEIVE AIRLINE DECISION&lt;br/&gt;Receive approved / rejected status&lt;br/&gt;Review airline remarks&lt;br/&gt;Update request status\&quot;]\n\nD13[\&quot;IF REJECTED&lt;br/&gt;Record rejection&lt;br/&gt;Update request status&lt;br/&gt;Notify Passenger\&quot;]\n\nD14[\&quot;IF APPROVED&lt;br/&gt;Monitor cancellation&lt;br/&gt;Monitor refund processing&lt;br/&gt;Update refund status&lt;br/&gt;Notify Passenger\&quot;]\n\nD15[\&quot;REPORTS &amp; ANALYTICS&lt;br/&gt;Booking&lt;br/&gt;Revenue&lt;br/&gt;Passenger&lt;br/&gt;Airline&lt;br/&gt;Flight&lt;br/&gt;Cancellation&lt;br/&gt;Refund\&quot;]\n\nD16[\&quot;NOTIFICATION MONITORING&lt;br/&gt;Booking&lt;br/&gt;Payment&lt;br/&gt;Ticket&lt;br/&gt;Flight status&lt;br/&gt;Cancellation&lt;br/&gt;Refund\&quot;]\n\nD17[\&quot;LOGOUT&lt;br/&gt;End Admin Session\&quot;]\n\nD18[\&quot;END ADMIN WORKFLOW\&quot;]\n\n\nD1 --&gt; D2\nD2 --&gt; D3\nD3 --&gt; D4\nD4 --&gt; D5\nD5 --&gt; D6\nD6 --&gt; D7\nD7 --&gt; D8\nD8 --&gt; D9\nD9 --&gt; D10\nD10 --&gt; D11\nD11 --&gt; D12\nD12 --&gt; D13\nD13 --&gt; D14\nD14 --&gt; D15\nD15 --&gt; D16\nD16 --&gt; D17\nD17 --&gt; D18\n\nend\n\n\n%% ============================================================\n%% ACTOR RELATIONSHIP — REPRESENTED VERTICALLY\n%% ============================================================\n\n%% Passenger communicates with Airline\n%% The communication is explicitly written inside each\n%% actor&#39;s vertical workflow so NO horizontal arrows are used.\n\n%% Airline communicates with Admin\n%% Admin communicates with Passenger\n\n%% ============================================================\n%% CLEAN STYLE — NO COLORS\n%% ============================================================\n\nclassDef clean fill:#FFFFFF,stroke:#333333,stroke-width:1px,color:#111111;\n\nclass P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16,P17,P18,P19,P20,P21,P22,P23,P24,P25,P26,P27,P28,P29,P30,P31 clean;\n\nclass A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,A18,A19,A20,A21,A22,A23,A24,A25,A26,A27,A28,A29,A30,A31 clean;\n\nclass D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17,D18 clean;\n\nstyle APP fill:#FFFFFF,stroke:#222222,stroke-width:2px,color:#111111&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="SkPADsE6_YKJa1JJ7YUe-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:ACTORS" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-2">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-1" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="4342" width="1395" x="50" y="300" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:PASSENGER" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="USER / PASSENGER" id="SkPADsE6_YKJa1JJ7YUe-3">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-2" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="4004.4593639575974" width="502.791519434629" x="882.3498233215548" y="19.17844522968198" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="REGISTER&#xa;Enter name, email, phone and password&#xa;Validate details → Create account" mermaidId="n:P1" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="REGISTER&#xa;Enter name, email, phone and password&#xa;Validate details → Create account" id="SkPADsE6_YKJa1JJ7YUe-4">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="344.0671378091873" x="79.36219081272085" y="44.110424028268554" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="LOGIN&#xa;Enter credentials&#xa;Authenticate → Passenger Dashboard" mermaidId="n:P2" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="LOGIN&#xa;Enter credentials&#xa;Authenticate → Passenger Dashboard" id="SkPADsE6_YKJa1JJ7YUe-5">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="323.36395759717317" x="89.71378091872792" y="162.05786219081273" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SEARCH FLIGHTS&#xa;Select one-way / round-trip&#xa;Enter origin → destination&#xa;Journey date&#xa;Return date if applicable" mermaidId="n:P3" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SEARCH FLIGHTS&#xa;Select one-way / round-trip&#xa;Enter origin → destination&#xa;Journey date&#xa;Return date if applicable" id="SkPADsE6_YKJa1JJ7YUe-6">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441697" width="256.32508833922265" x="123.23321554770318" y="280.0053003533569" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SEND FLIGHT SEARCH REQUEST&#xa;Request available flights from Airline" mermaidId="n:P4" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SEND FLIGHT SEARCH REQUEST&#xa;Request available flights from Airline" id="SkPADsE6_YKJa1JJ7YUe-7">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833923" width="320.40636042402826" x="91.19257950530036" y="434.39178445229686" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE AVAILABLE FLIGHTS&#xa;Receive flight information from Airline" mermaidId="n:P5" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE AVAILABLE FLIGHTS&#xa;Receive flight information from Airline" id="SkPADsE6_YKJa1JJ7YUe-8">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833923" width="332.23674911660777" x="85.2773851590106" y="533.160777385159" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="VIEW FLIGHT RESULTS&#xa;Airline → Flight Number&#xa;Departure → Arrival&#xa;Duration → Stops → Fare → Class → Baggage&#xa;Rating → Seat Availability → Refundability" mermaidId="n:P6" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="VIEW FLIGHT RESULTS&#xa;Airline → Flight Number&#xa;Departure → Arrival&#xa;Duration → Stops → Fare → Class → Baggage&#xa;Rating → Seat Availability → Refundability" id="SkPADsE6_YKJa1JJ7YUe-9">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441697" width="382.5159010600707" x="60.13780918727915" y="631.9297703180213" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="FILTER FLIGHTS&#xa;Price → Stops → Airline&#xa;Departure → Arrival&#xa;Duration → Class → Baggage&#xa;Rating → Seat Availability → Refundability" mermaidId="n:P7" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="FILTER FLIGHTS&#xa;Price → Stops → Airline&#xa;Departure → Arrival&#xa;Duration → Class → Baggage&#xa;Rating → Seat Availability → Refundability" id="SkPADsE6_YKJa1JJ7YUe-10">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441697" width="360.82685512367493" x="70.98233215547704" y="786.3162544169612" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SORT FLIGHTS&#xa;Recommended&#xa;Price → Duration → Departure → Arrival&#xa;Rating → Stops" mermaidId="n:P8" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SORT FLIGHTS&#xa;Recommended&#xa;Price → Duration → Departure → Arrival&#xa;Rating → Stops" id="SkPADsE6_YKJa1JJ7YUe-11">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="348.0106007067138" x="77.3904593639576" y="940.702738515901" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SELECT OUTBOUND FLIGHT&#xa;Select preferred airline and flight&#xa;Review schedule → Confirm outbound" mermaidId="n:P9" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SELECT OUTBOUND FLIGHT&#xa;Select preferred airline and flight&#xa;Review schedule → Confirm outbound" id="SkPADsE6_YKJa1JJ7YUe-12">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="328.29328621908127" x="87.24911660777386" y="1076.869699646643" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="ROUND TRIP?&#xa;YES → Search return flight → Filter → Sort → Select return&#xa;NO → Continue" mermaidId="n:P10" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="ROUND TRIP?&#xa;YES → Search return flight → Filter → Sort → Select return&#xa;NO → Continue" id="SkPADsE6_YKJa1JJ7YUe-13">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="483.0742049469965" x="9.858657243816255" y="1194.8171378091874" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="ADD TRAVELLERS&#xa;Name → DOB → Gender&#xa;Government ID Type → Government ID Number" mermaidId="n:P11" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="ADD TRAVELLERS&#xa;Name → DOB → Gender&#xa;Government ID Type → Government ID Number" id="SkPADsE6_YKJa1JJ7YUe-14">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="392.37455830388694" x="55.208480565371026" y="1312.7645759717316" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="AGE CALCULATION&#xa;Calculate age from DOB&#xa;Adult / Child / Infant&#xa;Apply applicable fare" mermaidId="n:P12" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="AGE CALCULATION&#xa;Calculate age from DOB&#xa;Adult / Child / Infant&#xa;Apply applicable fare" id="SkPADsE6_YKJa1JJ7YUe-15">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="227.73498233215548" x="137.52826855123675" y="1430.7120141342757" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SELECT CLASS&#xa;View available classes&#xa;Select cabin / class" mermaidId="n:P13" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SELECT CLASS&#xa;View available classes&#xa;Select cabin / class" id="SkPADsE6_YKJa1JJ7YUe-16">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="214.91872791519435" x="143.93639575971733" y="1566.8789752650177" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SELECT SEATS&#xa;View seat map&#xa;Select seat for each traveller&#xa;Window / Middle / Aisle&#xa;Apply seat fare" mermaidId="n:P14" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SELECT SEATS&#xa;View seat map&#xa;Select seat for each traveller&#xa;Window / Middle / Aisle&#xa;Apply seat fare" id="SkPADsE6_YKJa1JJ7YUe-17">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441697" width="266.1837455830389" x="118.30388692579506" y="1684.8264134275619" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="FOOD&#xa;View food options&#xa;Select food&#xa;Calculate price OR skip" mermaidId="n:P15" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="FOOD&#xa;View food options&#xa;Select food&#xa;Calculate price OR skip" id="SkPADsE6_YKJa1JJ7YUe-18">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="222.80565371024736" x="139.99293286219083" y="1839.2128975265018" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="EXTRA BAGGAGE&#xa;View included baggage&#xa;Select extra baggage&#xa;Calculate price OR continue" mermaidId="n:P16" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="EXTRA BAGGAGE&#xa;View included baggage&#xa;Select extra baggage&#xa;Calculate price OR continue" id="SkPADsE6_YKJa1JJ7YUe-19">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="257.31095406360424" x="122.74028268551237" y="1975.3798586572439" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="FARE CALCULATION&#xa;Outbound + Return Fare&#xa;Passenger Category + Class + Seat&#xa;Food + Baggage + Taxes&#xa;Calculate Final Total" mermaidId="n:P17" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="FARE CALCULATION&#xa;Outbound + Return Fare&#xa;Passenger Category + Class + Seat&#xa;Food + Baggage + Taxes&#xa;Calculate Final Total" id="SkPADsE6_YKJa1JJ7YUe-20">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441697" width="296.74558303886926" x="103.02296819787986" y="2111.546819787986" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="REVIEW BOOKING&#xa;Journey → Flights → Travellers&#xa;Government IDs → Class → Seats&#xa;Food → Baggage → Fare → Total" mermaidId="n:P18" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="REVIEW BOOKING&#xa;Journey → Flights → Travellers&#xa;Government IDs → Class → Seats&#xa;Food → Baggage → Fare → Total" id="SkPADsE6_YKJa1JJ7YUe-21">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="293.7879858657244" x="104.5017667844523" y="2265.933303886926" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SEND BOOKING REQUEST&#xa;Send selected flight, passenger, seat,&#xa;food, baggage and fare details to Airline" mermaidId="n:P19" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SEND BOOKING REQUEST&#xa;Send selected flight, passenger, seat,&#xa;food, baggage and fare details to Airline" id="SkPADsE6_YKJa1JJ7YUe-22">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="345.0530035335689" x="78.86925795053004" y="2402.100265017668" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="PAYMENT&#xa;Select payment method&#xa;Card / UPI / Net Banking / Wallet&#xa;Complete payment" mermaidId="n:P20" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="PAYMENT&#xa;Select payment method&#xa;Card / UPI / Net Banking / Wallet&#xa;Complete payment" id="SkPADsE6_YKJa1JJ7YUe-23">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="297.7314487632509" x="102.53003533568905" y="2520.047703180212" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="PAYMENT VERIFICATION&#xa;Verify payment response&#xa;Failed → Retry&#xa;Successful → Continue" mermaidId="n:P21" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="PAYMENT VERIFICATION&#xa;Verify payment response&#xa;Failed → Retry&#xa;Successful → Continue" id="SkPADsE6_YKJa1JJ7YUe-24">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="233.65017667844523" x="134.57067137809187" y="2656.214664310954" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE BOOKING CONFIRMATION&#xa;Receive PNR / Booking ID from Airline" mermaidId="n:P22" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE BOOKING CONFIRMATION&#xa;Receive PNR / Booking ID from Airline" id="SkPADsE6_YKJa1JJ7YUe-25">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833923" width="326.321554770318" x="88.23498233215548" y="2792.381625441696" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="TICKET&#xa;Generate e-ticket&#xa;Create PDF&#xa;Download ticket" mermaidId="n:P23" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="TICKET&#xa;Generate e-ticket&#xa;Create PDF&#xa;Download ticket" id="SkPADsE6_YKJa1JJ7YUe-26">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="185.3427561837456" x="158.7243816254417" y="2891.1506183745582" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NOTIFICATIONS&#xa;Booking confirmation&#xa;Payment confirmation&#xa;Ticket&#xa;Flight updates&#xa;Delay / Cancellation / Refund" mermaidId="n:P24" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="NOTIFICATIONS&#xa;Booking confirmation&#xa;Payment confirmation&#xa;Ticket&#xa;Flight updates&#xa;Delay / Cancellation / Refund" id="SkPADsE6_YKJa1JJ7YUe-27">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="143.83833922261485" width="271.113074204947" x="115.83922261484099" y="3027.3175795053003" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MY TRIPS&#xa;Upcoming → Completed → Cancelled&#xa;Flight status → Booking details → Ticket" mermaidId="n:P25" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MY TRIPS&#xa;Upcoming → Completed → Cancelled&#xa;Flight status → Booking details → Ticket" id="SkPADsE6_YKJa1JJ7YUe-28">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="347.0247349823322" x="77.88339222614842" y="3199.923586572438" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE BOOKING&#xa;Search PNR / Booking ID&#xa;View booking / ticket / flight status&#xa;Add food / baggage" mermaidId="n:P26" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE BOOKING&#xa;Search PNR / Booking ID&#xa;View booking / ticket / flight status&#xa;Add food / baggage" id="SkPADsE6_YKJa1JJ7YUe-29">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="314.4911660777385" x="94.15017667844523" y="3317.8710247349823" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RESCHEDULING REQUEST&#xa;Select booking&#xa;Select new date&#xa;Request new flight" mermaidId="n:P27" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RESCHEDULING REQUEST&#xa;Select booking&#xa;Select new date&#xa;Request new flight" id="SkPADsE6_YKJa1JJ7YUe-30">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="233.65017667844523" x="134.57067137809187" y="3454.0379858657247" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE RESCHEDULING OPTIONS&#xa;Receive available flights, seats and fares" mermaidId="n:P28" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE RESCHEDULING OPTIONS&#xa;Receive available flights, seats and fares" id="SkPADsE6_YKJa1JJ7YUe-31">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833923" width="348.0106007067138" x="77.3904593639576" y="3590.204946996467" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="CANCELLATION / REFUND REQUEST&#xa;Select booking&#xa;Check eligibility&#xa;Submit cancellation / refund request" mermaidId="n:P29" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="CANCELLATION / REFUND REQUEST&#xa;Select booking&#xa;Check eligibility&#xa;Submit cancellation / refund request" id="SkPADsE6_YKJa1JJ7YUe-32">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="321.3922261484099" x="90.69964664310955" y="3688.973939929329" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE REFUND RESULT&#xa;Receive approved / rejected status&#xa;Receive refund amount / status" mermaidId="n:P30" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE REFUND RESULT&#xa;Receive approved / rejected status&#xa;Receive refund amount / status" id="SkPADsE6_YKJa1JJ7YUe-33">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="309.5618374558304" x="96.6148409893993" y="3825.140901060071" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="END PASSENGER WORKFLOW" mermaidId="n:P31" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="END PASSENGER WORKFLOW" id="SkPADsE6_YKJa1JJ7YUe-34">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="51.78180212014134" width="258.2968197879859" x="122.24734982332156" y="3943.088339222615" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P1-&gt;P2#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-35">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-4" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-5">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="147.67402826855124" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P2-&gt;P3#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-36">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-5" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-6">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="265.6214664310954" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P3-&gt;P4#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-37">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-6" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-7">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="420.0079505300354" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P4-&gt;P5#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-38">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-7" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-8">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="518.7769434628975" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P5-&gt;P6#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-39">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-8" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-9">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="617.5459363957598" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P6-&gt;P7#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-40">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-9" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-10">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="771.9324204946997" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P7-&gt;P8#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-41">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-10" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-11">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="926.3189045936397" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P8-&gt;P9#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-42">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-11" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-12">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="1062.4858657243817" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P9-&gt;P10#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-43">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-12" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-13">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="1180.4333038869258" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P10-&gt;P11#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-44">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-13" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-14">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="1298.38074204947" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P11-&gt;P12#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-45">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-14" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-15">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="1416.328180212014" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P12-&gt;P13#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-46">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-15" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-16">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="1552.4951413427561" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P13-&gt;P14#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-47">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-16" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-17">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="1670.4425795053005" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P14-&gt;P15#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-48">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-17" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-18">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="1824.8290636042404" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P15-&gt;P16#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-49">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-18" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-19">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="1960.9960247349825" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P16-&gt;P17#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-50">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-19" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-20">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="2097.1629858657243" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P17-&gt;P18#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-51">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-20" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-21">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="2251.5494699646642" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P18-&gt;P19#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-52">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-21" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-22">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="2387.7164310954063" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P19-&gt;P20#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-53">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-22" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-23">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="2505.663869257951" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P20-&gt;P21#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-54">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-23" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-24">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="2641.830830388693" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P21-&gt;P22#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-55">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-24" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-25">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="2777.997791519435" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P22-&gt;P23#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-56">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-25" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-26">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="2876.766784452297" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P23-&gt;P24#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-57">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-26" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-27">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="3012.933745583039" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P24-&gt;P25#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-58">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-27" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-28">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="3185.539752650177" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P25-&gt;P26#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-59">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-28" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-29">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="3303.487190812721" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P26-&gt;P27#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-60">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-29" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-30">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="3439.654151943463" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P27-&gt;P28#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-61">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-30" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-31">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="3575.821113074205" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P28-&gt;P29#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-62">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-31" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-32">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="3674.5901060070673" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P29-&gt;P30#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-63">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-32" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-33">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="3810.7570671378094" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:P30-&gt;P31#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-64">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-3" source="SkPADsE6_YKJa1JJ7YUe-33" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-34">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="251.3957597173145" y="3928.7045053003535" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:AIRLINE" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="AIRLINE" id="SkPADsE6_YKJa1JJ7YUe-65">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-2" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="4313.232332155477" width="440.68197879858656" x="421.9505300353357" y="19.17844522968198" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="AIRLINE ONBOARDING&#xa;Admin enters airline details&#xa;Verify information&#xa;Approve airline&#xa;Activate airline account" mermaidId="n:A1" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="AIRLINE ONBOARDING&#xa;Admin enters airline details&#xa;Verify information&#xa;Approve airline&#xa;Activate airline account" id="SkPADsE6_YKJa1JJ7YUe-66">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441696" width="255.339222614841" x="92.6713780918728" y="44.11042402826855" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="LOGIN&#xa;Enter airline credentials&#xa;Authenticate → Airline Dashboard" mermaidId="n:A2" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="LOGIN&#xa;Enter airline credentials&#xa;Authenticate → Airline Dashboard" id="SkPADsE6_YKJa1JJ7YUe-67">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="299.70318021201416" x="70.48939929328623" y="198.49690812720846" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE ROUTES&#xa;Add route&#xa;Origin → Destination&#xa;View → Edit → Remove" mermaidId="n:A3" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE ROUTES&#xa;Add route&#xa;Origin → Destination&#xa;View → Edit → Remove" id="SkPADsE6_YKJa1JJ7YUe-68">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621908" width="226.74911660777386" x="106.96643109540636" y="316.4443462897526" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="CREATE FLIGHT&#xa;Select route&#xa;Flight number / name&#xa;Journey date&#xa;Departure / Arrival&#xa;Aircraft details" mermaidId="n:A4" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="CREATE FLIGHT&#xa;Select route&#xa;Flight number / name&#xa;Journey date&#xa;Departure / Arrival&#xa;Aircraft details" id="SkPADsE6_YKJa1JJ7YUe-69">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="143.83833922261482" width="213.93286219081273" x="113.37455830388693" y="452.61130742049465" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE SCHEDULE&#xa;Journey dates&#xa;Departure / Arrival times&#xa;Frequency&#xa;Update schedule" mermaidId="n:A5" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE SCHEDULE&#xa;Journey dates&#xa;Departure / Arrival times&#xa;Frequency&#xa;Update schedule" id="SkPADsE6_YKJa1JJ7YUe-70">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441696" width="237.59363957597174" x="101.54416961130742" y="625.2173144876325" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="CONFIGURE CLASS&#xa;Available class&#xa;Class fare&#xa;Seat capacity&#xa;Included baggage&#xa;Available services" mermaidId="n:A6" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="CONFIGURE CLASS&#xa;Available class&#xa;Class fare&#xa;Seat capacity&#xa;Included baggage&#xa;Available services" id="SkPADsE6_YKJa1JJ7YUe-71">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="143.83833922261482" width="187.31448763250884" x="126.68374558303887" y="779.6037985865723" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="CONFIGURE SEATS&#xa;Seat map&#xa;Seat numbers&#xa;Window / Middle / Aisle&#xa;Assign class&#xa;Seat availability&#xa;Seat-specific fare" mermaidId="n:A7" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="CONFIGURE SEATS&#xa;Seat map&#xa;Seat numbers&#xa;Window / Middle / Aisle&#xa;Assign class&#xa;Seat availability&#xa;Seat-specific fare" id="SkPADsE6_YKJa1JJ7YUe-72">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="162.0578621908127" width="228.7208480565371" x="105.98056537102474" y="952.2098056537102" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE FARES&#xa;Base fare&#xa;Class fare&#xa;Seat-specific fare&#xa;Update pricing" mermaidId="n:A8" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE FARES&#xa;Base fare&#xa;Class fare&#xa;Seat-specific fare&#xa;Update pricing" id="SkPADsE6_YKJa1JJ7YUe-73">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441696" width="183.37102473498234" x="128.65547703180212" y="1143.035335689046" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE BAGGAGE&#xa;Included baggage&#xa;Extra baggage options&#xa;Weight → Price" mermaidId="n:A9" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE BAGGAGE&#xa;Included baggage&#xa;Extra baggage options&#xa;Weight → Price" id="SkPADsE6_YKJa1JJ7YUe-74">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621908" width="214.91872791519435" x="112.88162544169612" y="1297.4218197879857" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE FOOD&#xa;Food options&#xa;Description → Price&#xa;Availability" mermaidId="n:A10" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE FOOD&#xa;Food options&#xa;Description → Price&#xa;Availability" id="SkPADsE6_YKJa1JJ7YUe-75">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621908" width="199.14487632508835" x="120.76855123674912" y="1433.5887809187277" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="PUBLISH FLIGHT&#xa;Validate route&#xa;Validate schedule&#xa;Validate class&#xa;Validate seats&#xa;Validate fares&#xa;Validate baggage&#xa;Validate food&#xa;Publish for passenger search" mermaidId="n:A11" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="PUBLISH FLIGHT&#xa;Validate route&#xa;Validate schedule&#xa;Validate class&#xa;Validate seats&#xa;Validate fares&#xa;Validate baggage&#xa;Validate food&#xa;Publish for passenger search" id="SkPADsE6_YKJa1JJ7YUe-76">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="199.45583038869256" width="259.2826855123675" x="90.69964664310955" y="1569.7557420494697" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE FLIGHT SEARCH REQUEST&#xa;Receive search criteria from Passenger" mermaidId="n:A12" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE FLIGHT SEARCH REQUEST&#xa;Receive search criteria from Passenger" id="SkPADsE6_YKJa1JJ7YUe-77">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833921" width="333.2226148409894" x="53.72968197879859" y="1797.9792402826854" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SEND AVAILABLE FLIGHTS&#xa;Return matching flights&#xa;Schedules → Fares → Seats → Availability" mermaidId="n:A13" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SEND AVAILABLE FLIGHTS&#xa;Return matching flights&#xa;Schedules → Fares → Seats → Availability" id="SkPADsE6_YKJa1JJ7YUe-78">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="356.88339222614843" x="41.899293286219084" y="1896.7482332155475" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE BOOKING REQUEST&#xa;Receive passenger, flight, seat,&#xa;food, baggage and payment information" mermaidId="n:A14" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE BOOKING REQUEST&#xa;Receive passenger, flight, seat,&#xa;food, baggage and payment information" id="SkPADsE6_YKJa1JJ7YUe-79">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="343.0812720848057" x="48.80035335689046" y="2014.6956713780917" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE BOOKING&#xa;Validate PNR&#xa;Passenger / Traveller details&#xa;Government ID&#xa;Seats → Class → Food → Baggage&#xa;Payment → Booking status" mermaidId="n:A15" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE BOOKING&#xa;Validate PNR&#xa;Passenger / Traveller details&#xa;Government ID&#xa;Seats → Class → Food → Baggage&#xa;Payment → Booking status" id="SkPADsE6_YKJa1JJ7YUe-80">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="143.83833922261482" width="298.7173144876325" x="70.98233215547704" y="2132.643109540636" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="CONFIRM BOOKING&#xa;Reserve seats&#xa;Generate PNR / Booking ID&#xa;Update booking status" mermaidId="n:A16" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="CONFIRM BOOKING&#xa;Reserve seats&#xa;Generate PNR / Booking ID&#xa;Update booking status" id="SkPADsE6_YKJa1JJ7YUe-81">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621908" width="249.42402826855124" x="95.62897526501767" y="2305.249116607774" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SEND BOOKING CONFIRMATION&#xa;Send PNR / ticket information to Passenger" mermaidId="n:A17" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SEND BOOKING CONFIRMATION&#xa;Send PNR / ticket information to Passenger" id="SkPADsE6_YKJa1JJ7YUe-82">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833921" width="365.75618374558303" x="37.46289752650177" y="2441.416077738516" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE SEAT AVAILABILITY&#xa;Total seats&#xa;Booked seats&#xa;Available seats&#xa;Update after booking / cancellation / rescheduling" mermaidId="n:A18" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE SEAT AVAILABILITY&#xa;Total seats&#xa;Booked seats&#xa;Available seats&#xa;Update after booking / cancellation / rescheduling" id="SkPADsE6_YKJa1JJ7YUe-83">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441696" width="420.96466431095405" x="9.858657243816255" y="2540.185070671378" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UPDATE FLIGHT STATUS&#xa;Scheduled&#xa;On-time&#xa;Delayed&#xa;Cancelled" mermaidId="n:A19" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="UPDATE FLIGHT STATUS&#xa;Scheduled&#xa;On-time&#xa;Delayed&#xa;Cancelled" id="SkPADsE6_YKJa1JJ7YUe-84">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441696" width="222.80565371024736" x="108.93816254416961" y="2694.571554770318" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SEND FLIGHT NOTIFICATION&#xa;Schedule changes&#xa;Delay&#xa;Cancellation&#xa;Other flight updates" mermaidId="n:A20" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SEND FLIGHT NOTIFICATION&#xa;Schedule changes&#xa;Delay&#xa;Cancellation&#xa;Other flight updates" id="SkPADsE6_YKJa1JJ7YUe-85">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441696" width="253.36749116607774" x="93.65724381625442" y="2848.958038869258" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE RESCHEDULING REQUEST&#xa;Receive request from Passenger" mermaidId="n:A21" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE RESCHEDULING REQUEST&#xa;Receive request from Passenger" id="SkPADsE6_YKJa1JJ7YUe-86">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833921" width="296.74558303886926" x="71.96819787985866" y="3003.3445229681975" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="CHECK RESCHEDULING&#xa;Available dates&#xa;Available flights&#xa;Available seats&#xa;Applicable fares" mermaidId="n:A22" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="CHECK RESCHEDULING&#xa;Available dates&#xa;Available flights&#xa;Available seats&#xa;Applicable fares" id="SkPADsE6_YKJa1JJ7YUe-87">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441696" width="216.8904593639576" x="111.89575971731449" y="3102.11351590106" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SEND RESCHEDULING OPTIONS&#xa;Return flights → seats → fares" mermaidId="n:A23" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SEND RESCHEDULING OPTIONS&#xa;Return flights → seats → fares" id="SkPADsE6_YKJa1JJ7YUe-88">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833921" width="277.02826855123675" x="81.82685512367492" y="3256.4999999999995" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE CANCELLATION / REFUND REQUEST&#xa;Receive request forwarded by Admin" mermaidId="n:A24" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE CANCELLATION / REFUND REQUEST&#xa;Receive request forwarded by Admin" id="SkPADsE6_YKJa1JJ7YUe-89">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833921" width="368.71378091872793" x="35.98409893992933" y="3355.268992932862" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="PROCESS CANCELLATION / REFUND&#xa;Review booking&#xa;Check cancellation rules&#xa;Check refund eligibility" mermaidId="n:A25" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="PROCESS CANCELLATION / REFUND&#xa;Review booking&#xa;Check cancellation rules&#xa;Check refund eligibility" id="SkPADsE6_YKJa1JJ7YUe-90">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621908" width="303.64664310954066" x="68.51766784452298" y="3454.0379858657243" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="DECISION&#xa;APPROVED or REJECTED" mermaidId="n:A26" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="DECISION&#xa;APPROVED or REJECTED" id="SkPADsE6_YKJa1JJ7YUe-91">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833921" width="227.73498233215548" x="106.47349823321555" y="3590.2049469964663" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="IF APPROVED&#xa;Approve cancellation&#xa;Calculate refund&#xa;Process refund&#xa;Update refund status" mermaidId="n:A27" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="IF APPROVED&#xa;Approve cancellation&#xa;Calculate refund&#xa;Process refund&#xa;Update refund status" id="SkPADsE6_YKJa1JJ7YUe-92">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441696" width="208.01766784452298" x="116.3321554770318" y="3688.9739399293285" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="IF REJECTED&#xa;Record rejection reason&#xa;Update request status" mermaidId="n:A28" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="IF REJECTED&#xa;Record rejection reason&#xa;Update request status" id="SkPADsE6_YKJa1JJ7YUe-93">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="228.7208480565371" x="105.98056537102474" y="3843.3604240282684" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SEND DECISION TO ADMIN&#xa;Send approval / rejection&#xa;Send refund information" mermaidId="n:A29" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SEND DECISION TO ADMIN&#xa;Send approval / rejection&#xa;Send refund information" id="SkPADsE6_YKJa1JJ7YUe-94">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.1797703180212" width="241.53710247349824" x="99.57243816254417" y="3961.3078621908126" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SUPPORT WEB CHECK-IN&#xa;Validate booking&#xa;Validate passenger&#xa;Verify eligibility&#xa;Check check-in window&#xa;Provide boarding-pass information" mermaidId="n:A30" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="SUPPORT WEB CHECK-IN&#xa;Validate booking&#xa;Validate passenger&#xa;Verify eligibility&#xa;Check check-in window&#xa;Provide boarding-pass information" id="SkPADsE6_YKJa1JJ7YUe-95">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="143.83833922261482" width="300.68904593639576" x="69.99646643109541" y="4079.2553003533567" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="END AIRLINE WORKFLOW" mermaidId="n:A31" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="END AIRLINE WORKFLOW" id="SkPADsE6_YKJa1JJ7YUe-96">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-65" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="51.781802120141336" width="232.6643109540636" x="104.00883392226149" y="4251.861307420494" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A1-&gt;A2#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-97">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-66" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-67">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="184.113074204947" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A2-&gt;A3#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-98">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-67" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-68">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="302.0605123674911" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A3-&gt;A4#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-99">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-68" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-69">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="438.22747349823317" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A4-&gt;A5#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-100">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-69" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-70">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="610.833480565371" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A5-&gt;A6#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-101">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-70" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-71">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="765.2199646643109" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A6-&gt;A7#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-102">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-71" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-72">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="937.8259717314487" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A7-&gt;A8#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-103">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-72" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-73">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="1128.6515017667843" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A8-&gt;A9#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-104">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-73" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-74">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="1283.0379858657243" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A9-&gt;A10#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-105">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-74" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-75">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="1419.2049469964663" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A10-&gt;A11#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-106">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-75" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-76">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="1555.3719081272084" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A11-&gt;A12#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-107">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-76" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-77">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="1783.5954063604238" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A12-&gt;A13#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-108">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-77" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-78">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="1882.3643992932862" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A13-&gt;A14#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-109">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-78" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-79">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="2000.3118374558303" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A14-&gt;A15#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-110">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-79" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-80">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="2118.2592756183744" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A15-&gt;A16#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-111">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-80" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-81">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="2290.8652826855123" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A16-&gt;A17#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-112">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-81" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-82">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="2427.0322438162543" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A17-&gt;A18#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-113">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-82" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-83">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="2525.8012367491165" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A18-&gt;A19#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-114">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-83" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-84">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="2680.1877208480564" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A19-&gt;A20#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-115">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-84" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-85">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="2834.5742049469964" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A20-&gt;A21#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-116">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-85" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-86">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="2988.9606890459363" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A21-&gt;A22#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-117">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-86" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-87">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="3087.7296819787985" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A22-&gt;A23#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-118">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-87" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-88">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="3242.1161660777384" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A23-&gt;A24#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-119">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-88" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-89">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="3340.8851590106005" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A24-&gt;A25#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-120">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-89" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-90">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="3439.6541519434627" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A25-&gt;A26#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-121">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-90" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-91">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="3575.8211130742047" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A26-&gt;A27#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-122">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-91" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-92">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="3674.590106007067" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A27-&gt;A28#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-123">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-92" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-93">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="3828.976590106007" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A28-&gt;A29#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-124">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-93" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-94">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="3946.924028268551" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A29-&gt;A30#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-125">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-94" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-95">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="4064.871466431095" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:A30-&gt;A31#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-126">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-65" source="SkPADsE6_YKJa1JJ7YUe-95" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-96">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="220.34098939929328" y="4237.477473498233" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:ADMIN" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="ADMIN" id="SkPADsE6_YKJa1JJ7YUe-127">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-2" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="2566.075971731449" width="392.37455830388694" x="9.858657243816255" y="19.17844522968198" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="LOGIN&#xa;Enter admin credentials&#xa;Authenticate → Admin Dashboard" mermaidId="n:D1" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="LOGIN&#xa;Enter admin credentials&#xa;Authenticate → Admin Dashboard" id="SkPADsE6_YKJa1JJ7YUe-128">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="89.17977031802121" width="297.7314487632509" x="47.32155477031802" y="44.11042402826856" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="ADMIN DASHBOARD&#xa;Airlines → Passengers → Flights&#xa;Bookings → Revenue&#xa;Cancellation / Refund Requests → Reports" mermaidId="n:D2" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="ADMIN DASHBOARD&#xa;Airlines → Passengers → Flights&#xa;Bookings → Revenue&#xa;Cancellation / Refund Requests → Reports" id="SkPADsE6_YKJa1JJ7YUe-129">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="359.8409893992933" x="16.26678445229682" y="162.05786219081276" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="AIRLINE ONBOARDING&#xa;Receive airline details&#xa;Verify registration / documents&#xa;Approve / Reject airline&#xa;Activate airline account" mermaidId="n:D3" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="AIRLINE ONBOARDING&#xa;Receive airline details&#xa;Verify registration / documents&#xa;Approve / Reject airline&#xa;Activate airline account" id="SkPADsE6_YKJa1JJ7YUe-130">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441698" width="280.97173144876325" x="55.70141342756184" y="298.2248233215548" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE AIRLINES&#xa;View airlines&#xa;View airline details&#xa;Update information&#xa;Activate / Deactivate airline" mermaidId="n:D4" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE AIRLINES&#xa;View airlines&#xa;View airline details&#xa;Update information&#xa;Activate / Deactivate airline" id="SkPADsE6_YKJa1JJ7YUe-131">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441698" width="261.25441696113074" x="65.5600706713781" y="452.61130742049477" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE PASSENGERS&#xa;View passenger accounts&#xa;View passenger details&#xa;View booking history" mermaidId="n:D5" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE PASSENGERS&#xa;View passenger accounts&#xa;View passenger details&#xa;View booking history" id="SkPADsE6_YKJa1JJ7YUe-132">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="234.63604240282686" x="78.86925795053004" y="606.9977915194347" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MONITOR ROUTES&#xa;View airline routes&#xa;Origin → Destination&#xa;Monitor route information" mermaidId="n:D6" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MONITOR ROUTES&#xa;View airline routes&#xa;Origin → Destination&#xa;Monitor route information" id="SkPADsE6_YKJa1JJ7YUe-133">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="243.5088339222615" x="74.43286219081273" y="743.1647526501768" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MONITOR FLIGHTS&#xa;Airline → Flight Number&#xa;Route → Schedule → Status&#xa;Seat Capacity → Available Seats → Bookings" mermaidId="n:D7" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MONITOR FLIGHTS&#xa;Airline → Flight Number&#xa;Route → Schedule → Status&#xa;Seat Capacity → Available Seats → Bookings" id="SkPADsE6_YKJa1JJ7YUe-134">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="372.65724381625444" x="9.858657243816255" y="879.3317137809189" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MANAGE BOOKINGS&#xa;Booking ID / PNR&#xa;Passenger → Airline → Flight → Date&#xa;Payment Status → Booking Status" mermaidId="n:D8" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MANAGE BOOKINGS&#xa;Booking ID / PNR&#xa;Passenger → Airline → Flight → Date&#xa;Payment Status → Booking Status" id="SkPADsE6_YKJa1JJ7YUe-135">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="322.3780918727915" x="34.99823321554771" y="1015.4986749116609" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE CANCELLATION / REFUND REQUEST&#xa;Receive request from Passenger&#xa;Identify booking&#xa;Verify passenger and payment details" mermaidId="n:D9" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE CANCELLATION / REFUND REQUEST&#xa;Receive request from Passenger&#xa;Identify booking&#xa;Verify passenger and payment details" id="SkPADsE6_YKJa1JJ7YUe-136">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="368.71378091872793" x="11.830388692579506" y="1151.665636042403" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="VALIDATE REQUEST&#xa;Check booking&#xa;Check payment&#xa;Check cancellation conditions&#xa;Check refund eligibility" mermaidId="n:D10" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="VALIDATE REQUEST&#xa;Check booking&#xa;Check payment&#xa;Check cancellation conditions&#xa;Check refund eligibility" id="SkPADsE6_YKJa1JJ7YUe-137">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441698" width="270.1272084805654" x="61.12367491166078" y="1287.8325971731451" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="FORWARD REQUEST TO AIRLINE&#xa;Send cancellation / refund request&#xa;Include booking information&#xa;Track request" mermaidId="n:D11" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="FORWARD REQUEST TO AIRLINE&#xa;Send cancellation / refund request&#xa;Include booking information&#xa;Track request" id="SkPADsE6_YKJa1JJ7YUe-138">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="306.6042402826855" x="42.88515901060071" y="1442.219081272085" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RECEIVE AIRLINE DECISION&#xa;Receive approved / rejected status&#xa;Review airline remarks&#xa;Update request status" mermaidId="n:D12" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RECEIVE AIRLINE DECISION&#xa;Receive approved / rejected status&#xa;Review airline remarks&#xa;Update request status" id="SkPADsE6_YKJa1JJ7YUe-139">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="309.5618374558304" x="41.40636042402827" y="1578.3860424028271" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="IF REJECTED&#xa;Record rejection&#xa;Update request status&#xa;Notify Passenger" mermaidId="n:D13" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="IF REJECTED&#xa;Record rejection&#xa;Update request status&#xa;Notify Passenger" id="SkPADsE6_YKJa1JJ7YUe-140">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="107.39929328621909" width="214.91872791519435" x="88.7279151943463" y="1714.5530035335692" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="IF APPROVED&#xa;Monitor cancellation&#xa;Monitor refund processing&#xa;Update refund status&#xa;Notify Passenger" mermaidId="n:D14" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="IF APPROVED&#xa;Monitor cancellation&#xa;Monitor refund processing&#xa;Update refund status&#xa;Notify Passenger" id="SkPADsE6_YKJa1JJ7YUe-141">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="125.61881625441698" width="242.52296819787986" x="74.92579505300354" y="1850.7199646643112" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="REPORTS &amp; ANALYTICS&#xa;Booking&#xa;Revenue&#xa;Passenger&#xa;Airline&#xa;Flight&#xa;Cancellation&#xa;Refund" mermaidId="n:D15" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="REPORTS &amp; ANALYTICS&#xa;Booking&#xa;Revenue&#xa;Passenger&#xa;Airline&#xa;Flight&#xa;Cancellation&#xa;Refund" id="SkPADsE6_YKJa1JJ7YUe-142">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="181.23630742049474" width="215.90459363957598" x="88.23498233215548" y="2005.1064487632511" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="NOTIFICATION MONITORING&#xa;Booking&#xa;Payment&#xa;Ticket&#xa;Flight status&#xa;Cancellation&#xa;Refund" mermaidId="n:D16" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="NOTIFICATION MONITORING&#xa;Booking&#xa;Payment&#xa;Ticket&#xa;Flight status&#xa;Cancellation&#xa;Refund" id="SkPADsE6_YKJa1JJ7YUe-143">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="162.05786219081276" width="251.3957597173145" x="70.48939929328623" y="2215.110424028269" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="LOGOUT&#xa;End Admin Session" mermaidId="n:D17" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="LOGOUT&#xa;End Admin Session" id="SkPADsE6_YKJa1JJ7YUe-144">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="70.00132508833923" width="188.30035335689047" x="102.03710247349824" y="2405.9359540636046" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="END ADMIN WORKFLOW" mermaidId="n:D18" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="END ADMIN WORKFLOW" id="SkPADsE6_YKJa1JJ7YUe-145">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-127" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=default;strokeColor=#333333;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="51.78180212014135" width="222.80565371024736" x="84.7844522968198" y="2504.704946996467" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D1-&gt;D2#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-146">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-128" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-129">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="147.67402826855127" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D2-&gt;D3#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-147">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-129" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-130">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="283.84098939929333" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D3-&gt;D4#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-148">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-130" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-131">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="438.2274734982333" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D4-&gt;D5#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-149">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-131" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-132">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="592.6139575971732" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D5-&gt;D6#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-150">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-132" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-133">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="728.7809187279153" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D6-&gt;D7#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-151">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-133" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-134">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="864.9478798586574" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D7-&gt;D8#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-152">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-134" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-135">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="1001.1148409893995" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D8-&gt;D9#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-153">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-135" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-136">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="1137.2818021201415" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D9-&gt;D10#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-154">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-136" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-137">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="1273.4487632508835" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D10-&gt;D11#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-155">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-137" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-138">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="1427.8352473498235" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D11-&gt;D12#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-156">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-138" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-139">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="1564.0022084805655" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D12-&gt;D13#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-157">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-139" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-140">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="1700.1691696113078" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D13-&gt;D14#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-158">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-140" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-141">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="1836.3361307420498" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D14-&gt;D15#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-159">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-141" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-142">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="1990.7226148409898" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D15-&gt;D16#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-160">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-142" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-143">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="2200.7265901060073" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D16-&gt;D17#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-161">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-143" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-144">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="2391.552120141343" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:D17-&gt;D18#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="SkPADsE6_YKJa1JJ7YUe-162">
+          <mxCell edge="1" parent="SkPADsE6_YKJa1JJ7YUe-127" source="SkPADsE6_YKJa1JJ7YUe-144" style="curved=0;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);rounded=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SkPADsE6_YKJa1JJ7YUe-145">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="196.18727915194347" y="2490.321113074205" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <mxCell id="SkPADsE6_YKJa1JJ7YUe-170" edge="1" parent="SkPADsE6_YKJa1JJ7YUe-2" source="SkPADsE6_YKJa1JJ7YUe-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0;exitY=0;exitDx=0;exitDy=0;" target="SkPADsE6_YKJa1JJ7YUe-127">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SkPADsE6_YKJa1JJ7YUe-177" edge="1" parent="SkPADsE6_YKJa1JJ7YUe-1" source="SkPADsE6_YKJa1JJ7YUe-163" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="SkPADsE6_YKJa1JJ7YUe-173">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SkPADsE6_YKJa1JJ7YUe-179" edge="1" parent="SkPADsE6_YKJa1JJ7YUe-1" source="SkPADsE6_YKJa1JJ7YUe-163" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="SkPADsE6_YKJa1JJ7YUe-175">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SkPADsE6_YKJa1JJ7YUe-180" edge="1" parent="SkPADsE6_YKJa1JJ7YUe-1" source="SkPADsE6_YKJa1JJ7YUe-163" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="SkPADsE6_YKJa1JJ7YUe-176">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 24px;&quot;&gt;✈️ SIMPLYFLY — AIR TICKET BOOKING SYSTEM&lt;/font&gt;" mermaidId="n:APP" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#222222;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="✈️ SIMPLYFLY — AIR TICKET BOOKING SYSTEM" id="SkPADsE6_YKJa1JJ7YUe-163">
+          <mxCell parent="SkPADsE6_YKJa1JJ7YUe-1" style="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#222222;fontColor=#111111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="143.84" width="410" x="520" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="SkPADsE6_YKJa1JJ7YUe-173" parent="SkPADsE6_YKJa1JJ7YUe-1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;br&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;&lt;span style=&quot;color: rgb(204, 204, 204); font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(27, 29, 30); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;ADMIN&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="120" x="190" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="SkPADsE6_YKJa1JJ7YUe-175" parent="SkPADsE6_YKJa1JJ7YUe-1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;br&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;&lt;span style=&quot;color: rgb(204, 204, 204); font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(27, 29, 30); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;ARLINES&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="120" x="665" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="SkPADsE6_YKJa1JJ7YUe-176" parent="SkPADsE6_YKJa1JJ7YUe-1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;br&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;&lt;span style=&quot;color: rgb(204, 204, 204); font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(27, 29, 30); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;USERS&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="120" x="1120" y="220" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
